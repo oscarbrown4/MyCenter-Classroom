@@ -1,0 +1,126 @@
+#profile_around {
+    position: fixed;
+    top:0;
+    bottom:0;
+    left:0;
+    right:0;
+    background:rgba(0,0,0,.4);
+    z-index: 7000;
+}
+#profile {
+    position: fixed;
+    background: #FFF;
+    box-shadow: #000 0 0 120px;
+    left:60px;
+    right:60px;
+    top:60px;
+    border-radius: 3px;
+    box-sizing: border-box;
+    padding:20px;
+    padding-left:220px;
+    min-height: 220px;
+}
+#profile_photo {
+    position: absolute;
+    left:20px;
+    width:180px;
+    height:180px;
+    border-radius: 3px;
+    background-color:#308ebf;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+#profile_photo .no-picture {
+    line-height: 180px;
+    font-size: 140px;
+    text-align: center;
+    width: 100%;
+    color:#eceff0;
+}
+#profile_name {
+    font-weight: 100;
+    font-size: 48px;
+    margin-bottom:20px;
+}
+.profile_lname {
+    color:#828c8d;
+}
+
+#allergies {
+    background:#ff6666;
+    border-radius: 3px;
+    padding:10px;
+    padding-left:50px;
+    color:#7e242a;
+    position: relative;
+    min-height: 30px;
+    margin-bottom: 20px;
+}
+#allergies .alert {
+    position: absolute;
+    left:10px;
+    font-size: 30px;
+    line-height: 30px;
+    width:30px;
+    text-align: center;
+}
+.allergy {
+    font-size: 18px;
+    line-height: 30px;
+    font-weight: 400;
+}
+
+
+#next_action {
+    border-radius: 3px;
+    border:1px solid #bec3c7;
+}
+#next_action_title {
+    font-size: 32px;
+    margin:10px;
+    margin-bottom:2px;
+}
+#next_action_text {
+    color:#828c8d;
+    margin:10px;
+    margin-top:2px;
+}
+#parents_holder {
+    padding:6px;
+    padding-bottom:0;
+    border-top:1px solid #bec3c7;
+}
+.parent {
+    box-sizing: border-box;
+    width:197px;
+    float: left;
+    padding-left:70px;
+    position: relative;
+    min-height: 60px;
+    margin-bottom:6px;
+}
+.parent .photo {
+    background:#f29c23;
+    width:60px;
+    height:60px;
+    position: absolute;
+    left:1px;
+    border-radius: 3px;
+}
+.parent .no-picture {
+    width:100%;
+    line-height: 60px;
+    text-align: center;
+    color:#c25f19;
+    font-size: 40px;
+}
+.parent .name {
+    font-size:22px;
+    margin-top:10px;
+}
+.parent .relationship {
+    color:#828c8d;
+    font-size:12px;
+    margin-top:-2px;
+}

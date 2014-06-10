@@ -1,0 +1,43 @@
+#top {
+    position: fixed;
+    top:0;
+    left:0;
+    right:0;
+    height:121px;
+    background:#FFFFFF;
+    border-bottom: 1px solid #bec3c7;
+    box-sizing: border-box;
+    padding:0 10px;
+    z-index: 6000;
+}
+
+#top .classroom_title {
+    line-height: 120px;
+    float: left;
+    font-size: 64px;
+    font-weight: 100;
+    margin-left: 10px;
+}
+
+
+.top_button {
+    float:right;
+    width:121px;
+    height:100px;
+    margin:10px 0;
+    box-sizing: border-box;
+    padding:0 10px;
+    border-left:1px solid #bec3c7;
+}
+
+#top .classroom_count_text {
+    color:#98a4a5;
+    line-height: 24px;
+}
+#top .classroom_count {
+    font-size: 76px;
+    line-height: 76px;
+    font-weight: 500;
+    font-family: "Avenir Next", "Arial", sans-serif;
+    letter-spacing: -6px;
+}

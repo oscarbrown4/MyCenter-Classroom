@@ -1,0 +1,10 @@
+body {
+    font-family: -apple-system-font, "Helvetica Neue";
+    font-weight: 200;
+    margin:0;
+    padding:0;
+    background:#eceff0;
+}
+.clear {
+    clear:both;
+}

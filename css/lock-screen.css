@@ -1,0 +1,50 @@
+#lock {
+    position: fixed;
+    top:0;
+    bottom:0;
+    left:0;
+    right:0;
+    background: #2f3f4f;
+    color:#eceff0;
+    box-sizing: border-box;
+    padding:80px;
+    overflow: hidden;
+    font-weight: 100;
+    z-index: 9000;
+}
+#lock_inside {
+    position: fixed;
+    bottom:80px;
+    top:80px;
+    left:80px;
+    right:80px;
+}
+#lock.off {
+    opacity: 0;
+    -webkit-transition:.3s;
+}
+#lock.off #lock_inside {
+    -webkit-transform:scale(.6);
+    -webkit-transition:.3s;    
+}
+
+#lock .classroom_title {
+    font-size: 96px;
+}
+#lock .classroom_count_text {
+    color:#98a4a5;
+    font-size: 48px;
+    margin-top:70px;
+    margin-bottom:10px;
+}
+#lock .classroom_count {
+    font-size: 500px;
+    line-height: 500px;
+    font-weight: 500;
+    font-family: "Avenir Next", "Arial", sans-serif;
+    letter-spacing: -50px;
+}
+#touch_to_unlock {
+    color:#98a4a5;
+    font-size: 48px;
+}
