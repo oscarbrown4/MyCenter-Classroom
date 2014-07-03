@@ -30,8 +30,9 @@ var studentsCollection = Backbone.Collection.extend({
 	url: '/api/student',
 
 	initialize: function(){
-		this.on( "change:checkedIn", this.updateCheckIn, this);
+		
 	},
+	
 	
 	
 	updateCheckIn: function(){

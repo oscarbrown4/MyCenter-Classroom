@@ -7,6 +7,12 @@ var student = Backbone.Model.extend({
         checkedIn: false,
     },
     
-    
+    checkInOut: function(parentID) {
+
+	    this.set('checkInParentID', parentID);
+	    this.set('checkedIn', !this.get('checkedIn'));
+	    this.save();
+	    
+    }
 
 });

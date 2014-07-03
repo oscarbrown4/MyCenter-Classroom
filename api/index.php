@@ -19,7 +19,7 @@ $children = array(
 		'id' => 1,
 		'fname' => 'Cinco',
 		'lname' => 'Brown',
-		'checkedIn' => TRUE,
+		'checkedIn' => FALSE,
 		'parents' => array(
 			array(
 				'fname' => 'Oscar',
