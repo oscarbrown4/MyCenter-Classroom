@@ -1,6 +1,4 @@
 var homeView = Backbone.View.extend({
-
-	template: Handlebars.compile($("#home-template").html()),
 	
 	initialize: function  () {
 		this.listenTo(this.collection, "reset", this.render);
@@ -13,7 +11,12 @@ var homeView = Backbone.View.extend({
 			$(".classroom_count").text(checkedin.length);
 		}
 		
-		this.$el.html(this.template(this.collection));
+		_.each(this.collection.models, function(model){
+			
+			var view = new studentView({model: model});
+			$("#students").append(view.render().el);
+			
+		});
 		return this;
 		
 	}

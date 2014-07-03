@@ -21,17 +21,15 @@
         
         <script src="collections/students.js" type="text/javascript"></script>
         
-        <script id="home-template" type="text/x-handlebars-template">
-        	{{#each models}}
-				<div class="child {{#if attributes.checkedIn}}checked-in{{/if}}" onclick="" data-childid="{{attributes.id}}">
-					<i class="fa fa-child no-picture"></i>
-					<div class="name">{{attributes.fname}}</div>
-				</div>
-			{{/each}}
-			<div class="clear"></div>
+        <script id="student-template" type="text/x-handlebars-template">
+        	<div class="child {{#if attributes.checkedIn}}checked-in{{/if}}" onclick="" data-childid="{{attributes.id}}">
+				<i class="fa fa-child no-picture"></i>
+				<div class="name">{{attributes.fname}}</div>
+			</div>
         </script>
 
 		<script src="views/home.js" type="text/javascript"></script>        
+		<script src="views/student.js" type="text/javascript"></script>        
         
         <script src="app.js" type="text/javascript"></script>
 			
@@ -53,7 +51,8 @@
 
 		
 		<div id="students">
-		
+			
+			<div class="clear"></div>
 		</div>
 
 
