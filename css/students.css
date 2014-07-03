@@ -15,13 +15,14 @@
     line-height: 36px;
     border-radius: 3px;
     overflow: hidden;
+	opacity: .6;
     background-color:#308ebf;
     background-position: center center;
     background-repeat: no-repeat;
     background-size: cover;
 }
-.child.out {
-    opacity: .5;
+.child.checked-in {
+    opacity: 1;
 }
 .child .name {
     position: absolute;
