@@ -36,7 +36,7 @@ var studentsCollection = Backbone.Collection.extend({
 	
 	updateCheckIn: function(){
 		
-		alert("checkin change");
+		//alert("checkin change");
 		
 	}
 	

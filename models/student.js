@@ -5,6 +5,8 @@ var student = Backbone.Model.extend({
         lname: '',
         photoURL: 'images/no-student-image.jpg',
         checkedIn: false,
-    }
+    },
+    
+    
 
 });

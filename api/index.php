@@ -20,6 +20,18 @@ $children = array(
 		'fname' => 'Cinco',
 		'lname' => 'Brown',
 		'checkedIn' => TRUE,
+		'parents' => array(
+			array(
+				'fname' => 'Oscar',
+				'lname' => 'Brown',
+				'relationship' => 'Father',
+				),
+			array(
+				'fname' => 'Caitlin',
+				'lname' => 'Brown',
+				'relationship' => 'Mother',
+				),
+			),
 		),
 	array(
 		'id' => 2,

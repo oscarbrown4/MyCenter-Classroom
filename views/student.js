@@ -12,7 +12,8 @@ var studentView = Backbone.View.extend({
 	
 	openStudent: function(){
 
-		alert("open");	
+		var profile = new profileView({model: this.model});
+		profile.render().show();
 		
 	},
 	
