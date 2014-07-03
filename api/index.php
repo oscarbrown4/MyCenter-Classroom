@@ -121,7 +121,7 @@ $parents = array(
 		),
 	);
 
-if (PATH(0) == 'chld' || PATH(0) == 'chlds') $array = $children;
+if (PATH(0) == 'student' || PATH(0) == 'students') $array = $children;
 elseif (PATH(0) == 'prnt') $array = $parents;
 
 if (!PATH(1)) { echo json_encode($array); exit; }

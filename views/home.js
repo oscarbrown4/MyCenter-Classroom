@@ -7,7 +7,7 @@ var homeView = Backbone.View.extend({
 	},
 		
 	render: function () {
-		
+				
 		if (this.collection.models.length > 0) {
 			var checkedin = this.collection.where({ checkedIn: true });
 			$(".classroom_count").text(checkedin.length);

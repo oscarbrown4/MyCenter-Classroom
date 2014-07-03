@@ -8,11 +8,11 @@ var AppRouter = Backbone.Router.extend({
 	
 	initialize: function  () {
 		
-		this.chlds = new chldCollection();
-		this.chlds.fetch({reset: true});
+		this.students = new studentsCollection();
+		this.students.fetch({reset: true});
 		
 		
-		this.homeView = new homeView({collection: this.chlds});
+		this.homeView = new homeView({collection: this.students});
 	},
 	
     lockScreen: function () {
@@ -29,9 +29,9 @@ var AppRouter = Backbone.Router.extend({
     }
 });
 
-
+var app;
 
 $(function() {
-	var app = new AppRouter();
+	app = new AppRouter();
     Backbone.history.start();
 });
