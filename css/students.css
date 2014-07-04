@@ -21,6 +21,9 @@
     background-repeat: no-repeat;
     background-size: cover;
 }
+.girl {
+	background-color:#b052c3 !important;
+}
 .student.checked-in {
     opacity: 1;
 }

@@ -41,3 +41,21 @@
     font-family: "Avenir Next", "Arial", sans-serif;
     letter-spacing: -6px;
 }
+#top #classroom_count_around {
+	margin-right: 52px;
+}
+#lock_button {
+	position: absolute;
+	right:0;
+	top:60px;
+	margin-top:-21px;
+	height:42px;
+	width:42px;
+	line-height: 42px;
+	font-size: 32px;
+	text-align: center;
+	color:#FFF;
+	border-top-left-radius: 3px;
+	border-bottom-left-radius: 3px;
+	background-color:#bec3c7;
+}

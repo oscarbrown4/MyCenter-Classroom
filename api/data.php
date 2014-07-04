@@ -28,6 +28,7 @@ $children = array(
 		'id' => 1,
 		'fname' => 'Cinco',
 		'lname' => 'Brown',
+		'gender' => 'boy',
 		'checkedIn' => TRUE,
 		'allergies' => array(
 			'mockingbirds',
@@ -50,6 +51,7 @@ $children = array(
 		'id' => 2,
 		'fname' => 'Charlotte',
 		'lname' => 'Brown',
+		'gender' => 'girl',
 		'checkedIn' => TRUE,
 		'parents' => array(
 			array(
@@ -68,6 +70,7 @@ $children = array(
 		'id' => 3,
 		'fname' => 'George',
 		'lname' => 'Brown',
+		'gender' => 'boy',
 		'checkedIn' => TRUE,
 		'parents' => array(
 			array(
@@ -86,6 +89,7 @@ $children = array(
 		'id' => 4,
 		'fname' => 'Ella',
 		'lname' => 'Henley',
+		'gender' => 'girl',
 		'checkedIn' => FALSE,
 		'parents' => array(
 			array(
@@ -104,6 +108,7 @@ $children = array(
 		'id' => 5,
 		'fname' => 'Jackson',
 		'lname' => 'Henley',
+		'gender' => 'boy',
 		'checkedIn' => FALSE,
 		'parents' => array(
 			array(
