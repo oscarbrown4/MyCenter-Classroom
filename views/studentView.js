@@ -7,13 +7,14 @@ var studentView = Backbone.View.extend({
 	},
 	
 	events: {
-		"click .child" : 'openStudent'
+		"click .student" : 'openStudent'
 	},
 	
 	openStudent: function(){
 
 		var profile = new profileView({model: this.model});
-		profile.render().show();
+		$("body").append(profile.render().el);
+		profile.show();
 		
 	},
 	

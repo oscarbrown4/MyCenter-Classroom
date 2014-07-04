@@ -3,7 +3,9 @@ var student = Backbone.Model.extend({
     defaults: {
         fname: '',
         lname: '',
-        photoURL: 'images/no-student-image.jpg',
+        allergies: false,
+        parents:[],
+        picture: false,
         checkedIn: false,
     },
     

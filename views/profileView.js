@@ -6,21 +6,33 @@ var profileView = Backbone.View.extend({
 
 	},
 	
-	el: '#profile_around',
+	tagName: "div",
+	className: "profile_around show",
 	
 	events: {
-		"click .parent" : 'checkInOut'
+		"click .parent" : 'checkInOut',
+		"click .close_button" : 'hide'
+		
 	},
 	
 	show: function() {
-		
-		this.$el.show();
-		
+		$("body").redraw();
+		this.$el.addClass("on");
 	},
 	
+	
+	
 	hide: function() {
-		this.$el.hide();
-		
+	
+		var view = this;
+
+	    this.$el.removeClass('on');
+	    this.$el.one('transitionend', this.removeIt);
+
+	},
+	
+	removeIt: function() {
+		this.remove();
 	},
 	
 	checkInOut: function(event){
@@ -33,7 +45,7 @@ var profileView = Backbone.View.extend({
 	
 	render: function () {
 			
-		this.$el.find("#profile").html(this.template(this.model));
+		this.$el.html(this.template(this.model.attributes));
 		return this;
 		
 	}

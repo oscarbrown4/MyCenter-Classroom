@@ -4,7 +4,7 @@
     padding-top:131px;
 }
 
-.child {
+.student {
     float:left;
     margin:1px;
     color:#FFF;
@@ -21,10 +21,10 @@
     background-repeat: no-repeat;
     background-size: cover;
 }
-.child.checked-in {
+.student.checked-in {
     opacity: 1;
 }
-.child .name {
+.student .name {
     position: absolute;
     background: rgba(0,0,0,.5);
     bottom:0;
@@ -35,7 +35,7 @@
     padding:8px 10px;
     word-wrap: break-word;
 }
-.child .no-picture {
+.student .no-picture {
     text-align: center;
     width:100%;
     color:#eceff0;
@@ -43,42 +43,42 @@
     font-size: 180px;
     display: none;
 }
-.child.no-picture .no-picture {
+.student.no-picture .no-picture {
     display: block;
 }
 #students.class10 {
     padding-left:10px;   
     padding-left:10px;
 }
-.class10 .child {
+.class10 .student {
     width:185px;
     height:185px;
     font-size: 26px;
     line-height: 28px;
 }
-.class10 .child .no-picture {
+.class10 .student .no-picture {
     line-height: 185px;
     font-size: 140px;
 }
-.class17 .child {
+.class17 .student {
     width:148px;
     height:148px;
     font-size: 22px;
     line-height: 24px;
     font-weight: 300;
 }
-.class17 .child .no-picture {
+.class17 .student .no-picture {
     line-height: 148px;
     font-size: 110px;
 }
-.class26 .child {
+.class26 .student {
     width:123px;
     height:123px;
     font-size: 20px;
     line-height: 22px;
     font-weight: 300;
 }
-.class26 .child .no-picture {
+.class26 .student .no-picture {
     line-height: 123px;
     font-size: 90px;
 }

@@ -19,26 +19,33 @@
         <script src="models/student.js" type="text/javascript"></script>
         <script src="models/parent.js" type="text/javascript"></script>
         
-        <script src="collections/students.js" type="text/javascript"></script>
+        <script src="collections/studentCollection.js" type="text/javascript"></script>
         
         <script id="student-template" type="text/x-handlebars-template">
-        	<div class="child {{#if attributes.checkedIn}}checked-in{{/if}}" onclick="" data-childid="{{attributes.id}}">
+        	<div class="student {{#if attributes.checkedIn}}checked-in{{/if}}" onclick="" data-childid="{{attributes.id}}">
 				<i class="fa fa-child no-picture"></i>
 				<div class="name">{{attributes.fname}}</div>
 			</div>
         </script>
         
         <script id="student-profile-template" type="text/x-handlebars-template">
-        	<div id="profile_photo"><i class="fa fa-child no-picture"></i></div>
-                <div id="profile_name">{{attributes.fname}} <span class="profile_lname">{{attributes.lname}}</span></div>
-            
-                <div id="allergies"><i class="fa fa-exclamation-circle alert"></i><div class="allergy">Peanut Allergy</div></div>
-                <div id="last_action"></div>
-                <div id="next_action">
-                    <div id="next_action_title">Check Out</div>
-                    <div id="next_action_text">Touch the person who is picking up {{attributes.fname}}.</div>
-                    <div id="parents_holder">
-                    {{#each attributes.parents}}
+        	<div class="profile">
+        	<div class="close_button"><i class=" fa fa-times"></i></div>
+        	<div class="profile_photo {{#unless picture}}no-picture{{/unless}}" {{#if picture}}style="background-image:url({{picture}});"{{/if}}><i class="fa fa-child"></i></div>
+                <div class="profile_name">{{fname}} <span class="profile_lname">{{lname}}</span></div>
+				{{#if allergies}}
+                <div class="allergies"><i class="fa fa-exclamation-circle alert"></i>
+                	{{#each allergies}}
+                	<span class="allergy">{{this}}</span>
+                	{{/each}}
+                </div>
+                {{/if}}
+                <div class="last_action"></div>
+                <div class="next_action">
+                    <div class="next_action_title">Check {{#if checkedIn}}Out{{else}}In{{/if}}</div>
+                    <div class="next_action_text">Touch the person who is {{#if checkedIn}}picking up{{else}}dropping off{{/if}} {{fname}}.</div>
+                    <div class="parents_holder">
+                    {{#each parents}}
                         <div class="parent" data-parentid="1">
                      
                             <div class="photo"><i class="fa fa-user no-picture"></i></div>
@@ -51,17 +58,19 @@
                         <div class="clear"></div>
                         </div>
                     </div>
+        	</div>
         </script>
 
-		<script src="views/home.js" type="text/javascript"></script>        
-		<script src="views/student.js" type="text/javascript"></script>        
-		<script src="views/profile.js" type="text/javascript"></script>        
+		<script src="views/homeView.js" type="text/javascript"></script>        
+		<script src="views/studentView.js" type="text/javascript"></script>        
+		<script src="views/profileView.js" type="text/javascript"></script>        
         
         <script src="app.js" type="text/javascript"></script>
 			
         <script src="libs/modernizr.js" type="text/javascript"></script>
         <script src="libs/cookie.js" type="text/javascript"></script>
         <script src="libs/fineuploader.js" type="text/javascript"></script>
+        <script src="libs/idle-timer.js" type="text/javascript"></script>
 
     </head>
     <body>
@@ -82,12 +91,7 @@
 		</div>
 		
 		
-		<div id="profile_around"  style="display:none;">
-            <div id="profile">
-			
-			</div>
-			</div>		
-		<!--
+		
 		<div id="lock" class="" onclick="">
             <div id="lock_inside">
                 <div class="classroom_title">Toddler 2</div>
@@ -96,8 +100,9 @@
                 <div id="touch_to_unlock">touch anywhere to unlock</div>
                 </div>
             </div>
-          -->  
+          
            
+        <script src="js/all.js" type="text/javascript"></script>
         <script src="js/lock-screen.js" type="text/javascript"></script>
     </body>
 </html>

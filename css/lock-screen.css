@@ -11,6 +11,7 @@
     overflow: hidden;
     font-weight: 100;
     z-index: 9000;
+    -webkit-transition:.3s;
 }
 #lock_inside {
     position: fixed;
@@ -18,14 +19,15 @@
     top:80px;
     left:80px;
     right:80px;
+    -webkit-transition:.3s; 
 }
 #lock.off {
     opacity: 0;
-    -webkit-transition:.3s;
+    
 }
 #lock.off #lock_inside {
-    -webkit-transform:scale(.6);
-    -webkit-transition:.3s;    
+    -webkit-transform:scale(.95) translateX(1000px);
+       
 }
 
 #lock .classroom_title {

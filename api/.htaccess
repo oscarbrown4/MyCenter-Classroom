@@ -1,4 +1,4 @@
-ErrorDocument 404 /index.php
+ErrorDocument 404 /data.php
 Options -Indexes
 Header set Connection close
 DirectoryIndex index.php
@@ -7,5 +7,5 @@ DirectoryIndex index.php
     RewriteEngine on
     RewriteCond %{REQUEST_FILENAME} !-f
     RewriteCond %{REQUEST_FILENAME} !-d
-    RewriteRule ^(.*)$ index.php [L]
+    RewriteRule ^(.*)$ data.php [L]
 </IfModule>

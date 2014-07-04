@@ -1,4 +1,4 @@
-#profile_around {
+.profile_around {
     position: fixed;
     top:0;
     bottom:0;
@@ -6,8 +6,17 @@
     right:0;
     background:rgba(0,0,0,.4);
     z-index: 7000;
+    opacity: 0;
+    -webkit-transition:.3s;
+    display: none;
 }
-#profile {
+.profile_around.show {
+	display: block;
+}
+.profile_around.on {
+	opacity: 1;
+}
+.profile {
     position: fixed;
     background: #FFF;
     box-shadow: #000 0 0 120px;
@@ -19,8 +28,28 @@
     padding:20px;
     padding-left:220px;
     min-height: 220px;
+    -webkit-transform:scale(.95);
+    -webkit-transition:.3s;
 }
-#profile_photo {
+.profile_around.on .profile {
+	-webkit-transform:scale(1);
+}
+.close_button {
+	position: absolute;
+	right:0;
+	top:0;
+	font-size: 38px;
+	line-height: 44px;
+	width: 46px;
+	padding-bottom: 2px;
+	text-align: center;
+	margin-top:4px;
+	margin-right:4px;
+	color:#FFF;
+	background-color: #828c8d;
+	border-radius: 3px;
+}
+.profile_photo {
     position: absolute;
     left:20px;
     width:180px;
@@ -31,14 +60,18 @@
     background-repeat: no-repeat;
     background-size: cover;
 }
-#profile_photo .no-picture {
+.profile_photo i.fa {
+	display: none;
+}
+.profile_photo.no-picture i.fa {
     line-height: 180px;
     font-size: 140px;
     text-align: center;
     width: 100%;
     color:#eceff0;
+    display: block;
 }
-#profile_name {
+.profile_name {
     font-weight: 100;
     font-size: 48px;
     margin-bottom:20px;
@@ -47,7 +80,7 @@
     color:#828c8d;
 }
 
-#allergies {
+.allergies {
     background:#ff6666;
     border-radius: 3px;
     padding:10px;
@@ -57,7 +90,7 @@
     min-height: 30px;
     margin-bottom: 20px;
 }
-#allergies .alert {
+.allergies .alert {
     position: absolute;
     left:10px;
     font-size: 30px;
@@ -70,23 +103,26 @@
     line-height: 30px;
     font-weight: 400;
 }
+.allergy:not(:last-child)::after {
+	content:',';
+}
 
 
-#next_action {
+.next_action {
     border-radius: 3px;
     border:1px solid #bec3c7;
 }
-#next_action_title {
+.next_action_title {
     font-size: 32px;
     margin:10px;
     margin-bottom:2px;
 }
-#next_action_text {
+.next_action_text {
     color:#828c8d;
     margin:10px;
     margin-top:2px;
 }
-#parents_holder {
+.parents_holder {
     padding:6px;
     padding-bottom:0;
     border-top:1px solid #bec3c7;

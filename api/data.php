@@ -2,6 +2,15 @@
 header('Content-Type: application/json');
 
 
+
+if($_SERVER['REQUEST_METHOD'] == 'PUT') {
+    parse_str(file_get_contents("php://input"),$post_vars);
+    $json = json_encode($post_vars);    
+    echo $json;
+    exit;
+}
+
+
 function PATH($num = FALSE) {
 	global $PATH;
 	if (!is_array($PATH)) {
@@ -19,7 +28,11 @@ $children = array(
 		'id' => 1,
 		'fname' => 'Cinco',
 		'lname' => 'Brown',
-		'checkedIn' => FALSE,
+		'checkedIn' => TRUE,
+		'allergies' => array(
+			'mockingbirds',
+			'your mom',
+			),
 		'parents' => array(
 			array(
 				'fname' => 'Oscar',
@@ -35,103 +48,79 @@ $children = array(
 		),
 	array(
 		'id' => 2,
-		'fname' => 'Charolotte',
+		'fname' => 'Charlotte',
 		'lname' => 'Brown',
 		'checkedIn' => TRUE,
+		'parents' => array(
+			array(
+				'fname' => 'Michael',
+				'lname' => 'Brown',
+				'relationship' => 'Father',
+				),
+			array(
+				'fname' => 'Rebecca',
+				'lname' => 'Brown',
+				'relationship' => 'Mother',
+				),
+			),
 		),
 	array(
 		'id' => 3,
 		'fname' => 'George',
 		'lname' => 'Brown',
 		'checkedIn' => TRUE,
+		'parents' => array(
+			array(
+				'fname' => 'Michael',
+				'lname' => 'Brown',
+				'relationship' => 'Father',
+				),
+			array(
+				'fname' => 'Rebecca',
+				'lname' => 'Brown',
+				'relationship' => 'Mother',
+				),
+			),
 		),
 	array(
 		'id' => 4,
 		'fname' => 'Ella',
 		'lname' => 'Henley',
 		'checkedIn' => FALSE,
+		'parents' => array(
+			array(
+				'fname' => 'Curtis',
+				'lname' => 'Henley',
+				'relationship' => 'Father',
+				),
+			array(
+				'fname' => 'Colby',
+				'lname' => 'Henley',
+				'relationship' => 'Mother',
+				),
+			),
 		),
 	array(
 		'id' => 5,
 		'fname' => 'Jackson',
 		'lname' => 'Henley',
 		'checkedIn' => FALSE,
+		'parents' => array(
+			array(
+				'fname' => 'Curtis',
+				'lname' => 'Henley',
+				'relationship' => 'Father',
+				),
+			array(
+				'fname' => 'Colby',
+				'lname' => 'Henley',
+				'relationship' => 'Mother',
+				),
+			),
 		),		
 	);
 
 
-$parents = array(
-	array(
-		'parentID' => 1,
-		'fname' => 'Oscar',
-		'lname' => 'Brown',
-		'childID' => 1,
-		'relationship' => 'Father',
-		),
-	array(
-		'parentID' => 2,
-		'fname' => 'Caitie',
-		'lname' => 'Brown',
-		'childID' => 1,
-		'relationship' => 'Mother',
-		),
-	array(
-		'parentID' => 3,
-		'fname' => 'Michael',
-		'lname' => 'Brown',
-		'childID' => 2,
-		'relationship' => 'Father',
-		),
-	array(
-		'parentID' => 3,
-		'fname' => 'Michael',
-		'lname' => 'Brown',
-		'childID' => 3,
-		'relationship' => 'Father',
-		),
-	array(
-		'parentID' => 4,
-		'fname' => 'Rebecca',
-		'lname' => 'Brown',
-		'childID' => 2,
-		'relationship' => 'Mother',
-		),
-	array(
-		'parentID' => 4,
-		'fname' => 'Rebecca',
-		'lname' => 'Brown',
-		'childID' => 3,
-		'relationship' => 'Mother',
-		),
-	array(
-		'parentID' => 5,
-		'fname' => 'Curtis',
-		'lname' => 'Henley',
-		'childID' => 4,
-		'relationship' => 'Father',
-		),
-	array(
-		'parentID' => 5,
-		'fname' => 'Curtis',
-		'lname' => 'Henley',
-		'childID' => 5,
-		'relationship' => 'Father',
-		),
-	array(
-		'parentID' => 6,
-		'fname' => 'Colby',
-		'lname' => 'Henley',
-		'childID' => 4,
-		'relationship' => 'Mother',
-		),
-	array(
-		'parentID' => 6,
-		'fname' => 'Colby',
-		'lname' => 'Henley',
-		'childID' => 5,
-		'relationship' => 'Mother',
-		),
-	);
 
 if (PATH(0) == 'student' || PATH(0) == 'students') $array = $children;
 elseif (PATH(0) == 'prnt') $array = $parents;
