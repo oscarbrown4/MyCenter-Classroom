@@ -19,15 +19,14 @@
     top:80px;
     left:80px;
     right:80px;
-    -webkit-transition:.3s; 
+    -webkit-transition:.5s;  
 }
 #lock.off {
     opacity: 0;
-    
 }
 #lock.off #lock_inside {
     -webkit-transform:scale(.95) translateX(1000px);
-       
+    -webkit-transition:.3s; 
 }
 
 #lock .classroom_title {

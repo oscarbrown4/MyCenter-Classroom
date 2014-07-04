@@ -22,7 +22,7 @@
     box-shadow: #000 0 0 120px;
     left:60px;
     right:60px;
-    top:60px;
+    top:180px;
     border-radius: 3px;
     box-sizing: border-box;
     padding:20px;
@@ -48,6 +48,11 @@
 	color:#FFF;
 	background-color: #828c8d;
 	border-radius: 3px;
+	-webkit-tap-highlight-color: rgba(0,0,0,0);
+    -webkit-transition:.2s;
+}
+.close_button:active {
+	-webkit-transform:scale(.9);
 }
 .profile_photo {
     position: absolute;
@@ -135,6 +140,11 @@
     position: relative;
     min-height: 60px;
     margin-bottom:6px;
+    -webkit-tap-highlight-color: rgba(0,0,0,0);
+    -webkit-transition:.2s;
+}
+.parent:active {
+	-webkit-transform:scale(.9);
 }
 .parent .photo {
     background:#f29c23;

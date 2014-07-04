@@ -15,18 +15,20 @@
     line-height: 36px;
     border-radius: 3px;
     overflow: hidden;
-	opacity: .6;
-    background-color:#308ebf;
     background-position: center center;
     background-repeat: no-repeat;
     background-size: cover;
+    -webkit-tap-highlight-color: rgba(0,0,0,0);
+    -webkit-transition:.2s;
+}
+.student:active {
+	-webkit-transform:scale(.9);
 }
 .girl {
 	background-color:#b052c3 !important;
 }
-.student.checked-in {
-    opacity: 1;
-}
+
+
 .student .name {
     position: absolute;
     background: rgba(0,0,0,.5);
@@ -37,6 +39,20 @@
     overflow: hidden;
     padding:8px 10px;
     word-wrap: break-word;
+    z-index: 3;
+}
+.student_picture_holder {
+	position: absolute;
+	top:0;
+	left:0;
+	right:0;
+	bottom:0;
+	background-color:#308ebf;
+	opacity: .4;
+	z-index: 1;
+}
+.student.checked-in .student_picture_holder {
+    opacity: 1;
 }
 .student .no-picture {
     text-align: center;
@@ -45,6 +61,8 @@
     line-height: 248px;
     font-size: 180px;
     display: none;
+    position: relative;
+    z-index: 2;
 }
 .student.no-picture .no-picture {
     display: block;

@@ -10,7 +10,7 @@ if($_SERVER['REQUEST_METHOD'] == 'PUT') {
     exit;
 }
 
-
+ 
 function PATH($num = FALSE) {
 	global $PATH;
 	if (!is_array($PATH)) {
@@ -23,7 +23,7 @@ function PATH($num = FALSE) {
 	return FALSE;
 }
 
-$children = array(
+$students = array(
 	array(
 		'id' => 1,
 		'fname' => 'Cinco',
@@ -44,6 +44,16 @@ $children = array(
 				'fname' => 'Caitlin',
 				'lname' => 'Brown',
 				'relationship' => 'Mother',
+				),
+			array(
+				'fname' => 'Thing',
+				'lname' => 'Brown',
+				'relationship' => 'Worst Aunt Ever',
+				),
+			array(
+				'fname' => 'Nita',
+				'lname' => 'Brown',
+				'relationship' => 'Grandmother',
 				),
 			),
 		),
@@ -122,18 +132,109 @@ $children = array(
 				'relationship' => 'Mother',
 				),
 			),
-		),		
+		),
+	array(
+		'id' => 6,
+		'fname' => 'Oliver',
+		'lname' => 'Gadberry',
+		'gender' => 'boy',
+		'checkedIn' => FALSE,
+		'parents' => array(
+			array(
+				'fname' => 'Julia',
+				'lname' => 'Gadberry',
+				'relationship' => 'Mother',
+				),
+			array(
+				'fname' => 'Taylor',
+				'lname' => 'Gadberry',
+				'relationship' => 'Father',
+				),
+			),
+		),
+	array(
+		'id' => 7,
+		'fname' => 'Winn',
+		'lname' => 'Schooler',
+		'gender' => 'boy',
+		'checkedIn' => FALSE,
+		'parents' => array(
+			array(
+				'fname' => 'Amanda',
+				'lname' => 'Schooler',
+				'relationship' => 'Mother',
+				),
+			array(
+				'fname' => 'Blake',
+				'lname' => 'Schooler',
+				'relationship' => 'Father',
+				),
+			),
+		),
+	array(
+		'id' => 8,
+		'fname' => 'Jack',
+		'lname' => 'Robertson',
+		'gender' => 'boy',
+		'checkedIn' => FALSE,
+		'parents' => array(
+			array(
+				'fname' => 'Kristina',
+				'lname' => 'Robertson',
+				'relationship' => 'Mother',
+				),
+			array(
+				'fname' => 'Josh',
+				'lname' => 'Robertson',
+				'relationship' => 'Father',
+				),
+			),
+		),
+	array(
+		'id' => 9,
+		'fname' => 'Palmer',
+		'lname' => 'Thompson',
+		'gender' => 'boy',
+		'checkedIn' => FALSE,
+		'parents' => array(
+			array(
+				'fname' => 'Britney',
+				'lname' => 'Thompson',
+				'relationship' => 'Mother',
+				),
+			array(
+				'fname' => 'Jon',
+				'lname' => 'Thompson',
+				'relationship' => 'Father',
+				),
+			),
+		),
+	array(
+		'id' => 10,
+		'fname' => 'Mary',
+		'lname' => 'Turner',
+		'gender' => 'girl',
+		'checkedIn' => FALSE,
+		'parents' => array(
+			array(
+				'fname' => 'Sharon',
+				'lname' => 'Turner',
+				'relationship' => 'Mother',
+				),
+			array(
+				'fname' => 'Joe',
+				'lname' => 'Turner',
+				'relationship' => 'Father',
+				),
+			),
+		),
 	);
 
 
-
-if (PATH(0) == 'student' || PATH(0) == 'students') $array = $children;
-elseif (PATH(0) == 'prnt') $array = $parents;
-
-if (!PATH(1)) { echo json_encode($array); exit; }
+if (!PATH(1)) { echo json_encode($students); exit; }
 else {
 	$itemID = PATH(1);
-	foreach ($array as $item) {
+	foreach ($students as $item) {
 		if ($item['id'] == $itemID) { echo json_encode($item); exit; }
 	}
 	
