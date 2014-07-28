@@ -21,6 +21,87 @@ if (PATH(0) == 'login'){
 	echo json_encode($return);
 	exit;
 }
+elseif (PATH(0) == 'getAllStudents'){
+	$allChildren = array(
+	array(
+		'id' => 1,
+		'fname' => 'Cinco',
+		'lname' => 'Brown',
+		),
+	array(
+		'id' => 5,
+		'fname' => 'Jackson',
+		'lname' => 'Henley',
+		),
+	array(
+		'id' => 2,
+		'fname' => 'Charlotte',
+		'lname' => 'Brown',
+		),
+	array(
+		'id' => 3,
+		'fname' => 'George',
+		'lname' => 'Brown',
+		),
+	array(
+		'id' => 4,
+		'fname' => 'Ella',
+		'lname' => 'Henley',
+		),
+	array(
+		'id' => 1000,
+		'fname' => 'Soso',
+		'lname' => 'Anderson',
+		)
+	);
+	
+	foreach ($allChildren as $key => $row) {
+			$lname[$key] = $row['lname'];
+			$fname[$key] = $row['fname'];
+		}
+	array_multisort($lname, SORT_ASC, $fname, SORT_ASC, $allChildren);
+	
+	echo json_encode($allChildren);
+	exit;
+}
+elseif (PATH(0) == 'addNewStudent'){
+	$return = array(
+		'id' => 1000,
+		'fname' => 'Soso',
+		'lname' => 'Anderson',
+		'gender' => 'boy',
+		'checkedIn' => FALSE,
+		'allergies' => array(
+			'stuff',
+			'such',
+			),
+		'parents' => array(
+			array(
+				'fname' => 'Mike',
+				'lname' => 'Anderson',
+				'relationship' => 'Father',
+				),
+			array(
+				'fname' => 'Jenny',
+				'lname' => 'Anderson',
+				'relationship' => 'Mother',
+				),
+			array(
+				'fname' => 'Marsha',
+				'lname' => 'Brady',
+				'relationship' => 'Aunt',
+				),
+			array(
+				'fname' => 'Louise',
+				'lname' => 'Anderson',
+				'relationship' => 'Grandmother',
+				),
+			)
+		);
+	echo json_encode($return);
+	exit;
+}
+
 
 
 if($_SERVER['REQUEST_METHOD'] == 'PUT') {

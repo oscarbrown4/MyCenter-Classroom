@@ -10,6 +10,12 @@ $(document).ready(function(){
 	$(document).on("idle.idleTimer", function (event, elem, obj) {
           showLockScreen();
      });
+     
+     
+     $("body").on('click', '.logout_button', function() {
+	    logout(); 
+     });
+     
 });
 
 $("#lock_button").on('click', showLockScreen);

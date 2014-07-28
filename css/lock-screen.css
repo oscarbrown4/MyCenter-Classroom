@@ -49,3 +49,10 @@
     color:#98a4a5;
     font-size: 48px;
 }
+.logout_button {
+	position:absolute;
+	right:40px;
+	top:40px;
+	cursor:pointer;
+	font-size:24px;
+}

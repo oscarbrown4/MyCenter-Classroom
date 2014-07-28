@@ -3,6 +3,7 @@ var classroomsView = Backbone.View.extend({
 	template: Handlebars.compile($("#classrooms-template").html()),
 	
 	initialize: function  () {
+		getAllStudents();
 		this.listenTo(this.collection, "reset", this.show);
 	},
 	

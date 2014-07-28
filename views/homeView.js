@@ -1,6 +1,8 @@
 var homeView = Backbone.View.extend({
 	
 	initialize: function  () {
+		
+		this.listenTo(this.collection, "add", this.render);
 		this.listenTo(this.collection, "reset", this.render);
 		this.listenTo(this.collection, "change:checkedIn", this.render);
 	},
@@ -26,6 +28,8 @@ var homeView = Backbone.View.extend({
 		else if (numStudents >=17) var studentsClass = 'class17';
 		else if (numStudents >=10) var studentsClass = 'class10';
 		else var studentsClass = '';
+				
+		makeAllStudentList();
 		
 		$("#students").addClass(studentsClass).append($('<div/>').addClass("clear"));
 		
