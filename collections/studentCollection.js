@@ -26,10 +26,16 @@ var studentsCollection = Backbone.Collection.extend({
 	},
 	
 	model: student,
+		
+	classroomID: 0,
 	
-	url: '/api/student',
-
+	url: function(){
+		return '/api/students/' + this.classroomID;
+		},
+		
 	initialize: function(){
+				
 		this.listenTo(this, "change:checkedIn", this.sort);
+
 	}
 });

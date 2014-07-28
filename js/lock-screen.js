@@ -5,7 +5,7 @@ $("#lock").on('click',function(){
 });
 
 $(document).ready(function(){
-	$(document).idleTimer(60*1000);
+	$(document).idleTimer(10*1000);
 	
 	$(document).on("idle.idleTimer", function (event, elem, obj) {
           showLockScreen();

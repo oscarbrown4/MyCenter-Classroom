@@ -3,14 +3,6 @@ header('Content-Type: application/json');
 
 
 
-if($_SERVER['REQUEST_METHOD'] == 'PUT') {
-    parse_str(file_get_contents("php://input"),$post_vars);
-    $json = json_encode($post_vars);    
-    echo $json;
-    exit;
-}
-
- 
 function PATH($num = FALSE) {
 	global $PATH;
 	if (!is_array($PATH)) {
@@ -22,6 +14,24 @@ function PATH($num = FALSE) {
 	elseif ($num>=0 && isset($PATH[$num])) return $PATH[$num];
 	return FALSE;
 }
+
+
+if (PATH(0) == 'login'){
+	$return = array('success' => TRUE, 'logincode' => "12345", 'locID' => 1, 'userinfo' => array('fname' => 'Oscar', 'lname' => 'Brown', 'userID' => 1, 'PIN' => 1234));
+	echo json_encode($return);
+	exit;
+}
+
+
+if($_SERVER['REQUEST_METHOD'] == 'PUT') {
+    parse_str(file_get_contents("php://input"),$post_vars);
+    $json = json_encode($post_vars);    
+    echo $json;
+    exit;
+}
+
+ 
+
 
 $students = array(
 	array(
@@ -231,10 +241,90 @@ $students = array(
 	);
 
 
-if (!PATH(1)) { echo json_encode($students); exit; }
+$classrooms = array(
+		array(
+			'id' => 1,
+			'room' => 1,
+			'name' => 'Infant 1',
+			),
+		array(
+			'id' => 2,
+			'room' => 2,
+			'name' => 'Infant 2',
+			),
+		array(
+			'id' => 3,
+			'room' => 3,
+			'name' => 'Toddler 1',
+			),
+		array(
+			'id' => 4,
+			'room' => 4,
+			'name' => 'Toddler 2',
+			),
+		array(
+			'id' => 5,
+			'room' => 5,
+			'name' => 'Pre-School 1',
+			),
+		array(
+			'id' => 6,
+			'room' => 6,
+			'name' => 'Pre-School 2',
+			),
+		array(
+			'id' => 7,
+			'room' => 7,
+			'name' => 'Pre-K 1',
+			),
+		array(
+			'id' => 8,
+			'room' => 8,
+			'name' => 'Pre-K 2',
+			),
+		array(
+			'id' => 9,
+			'room' => 9,
+			'name' => 'Kindergarten 1',
+			),
+		array(
+			'id' => 10,
+			'room' => 10,
+			'name' => 'After School',
+			),
+		array(
+			'id' => 11,
+			'room' => 11,
+			'name' => 'School Age 1',
+			),
+		array(
+			'id' => 12,
+			'room' => 12,
+			'name' => 'School Age 2',
+			),
+		array(
+			'id' => 13,
+			'room' => 13,
+			'name' => 'School Age 3',
+			),
+		array(
+			'id' => 14,
+			'room' => 14,
+			'name' => 'School Age 4',
+			),
+		);
+		
+		
+		
+if (PATH(0) == 'classrooms') $array = $classrooms;
+else $array = $students;		
+
+
+
+if (!PATH(1) || PATH(0) == 'students') { echo json_encode($array); exit; }
 else {
 	$itemID = PATH(1);
-	foreach ($students as $item) {
+	foreach ($array as $item) {
 		if ($item['id'] == $itemID) { echo json_encode($item); exit; }
 	}
 	

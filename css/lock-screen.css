@@ -10,7 +10,7 @@
     padding:80px;
     overflow: hidden;
     font-weight: 100;
-    z-index: 9000;
+    z-index: 6000;
     -webkit-transition:.3s;
 }
 #lock_inside {

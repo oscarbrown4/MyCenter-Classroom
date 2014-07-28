@@ -2,25 +2,31 @@
 <html class="no-js">
     <head>
         <meta charset="UTF-8">
-        <title>MyCenter</title>
+        <title>MyClassroom</title>
         <meta name="viewport" id="view" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no" />
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        
         <link rel="stylesheet" href="css/all.css">
+        <link rel="stylesheet" href="css/login.css">
         <link rel="stylesheet" href="css/lock-screen.css">
         <link rel="stylesheet" href="css/top.css">
         <link rel="stylesheet" href="css/students.css">
         <link rel="stylesheet" href="css/profile.css">
+        <link rel="stylesheet" href="css/classrooms.css">
         <link rel="stylesheet" href="css/font-awesome/css/font-awesome.min.css">
 
         <script src="libs/jquery.js" type="text/javascript"></script>
         <script src="libs/underscore.js" type="text/javascript"></script>
         <script src="libs/backbone.js" type="text/javascript"></script>
-        <script src="libs/backbone.localStorage.js" type="text/javascript"></script>
+        <script src="libs/backbone.dualstorage.js" type="text/javascript"></script>
         <script src="libs/handlebars.js" type="text/javascript"></script>
-
+       
         <script src="models/student.js" type="text/javascript"></script>
         <script src="models/parent.js" type="text/javascript"></script>
+        <script src="models/classroom.js" type="text/javascript"></script>
         
         <script src="collections/studentCollection.js" type="text/javascript"></script>
+        <script src="collections/classroomCollection.js" type="text/javascript"></script>
         
         <script id="student-template" type="text/x-handlebars-template">
         	<div class="student {{#if attributes.checkedIn}}checked-in{{/if}} {{#unless attributes.picture}}no-picture{{/unless}}" onclick="">
@@ -28,6 +34,19 @@
 				<i class="fa fa-child no-picture"></i>
 				<div class="name">{{attributes.fname}}</div>
 			</div>
+        </script>
+        
+         <script id="classrooms-template" type="text/x-handlebars-template">
+        	<div class="title">Select your classroom</div>
+        	<ul class="classrooms_list">
+        		{{#each models}}
+        			<li class="classroom_selector" data-roomid="{{id}}"><div>
+        			{{attributes.name}} {{#if attributes.room}}<div class="room_num">Room {{attributes.room}}</div>{{/if}}
+        			<div class="clear"></div>
+        			</div>
+        			</li>
+        		{{/each}}
+        	</ul>
         </script>
         
         <script id="student-profile-template" type="text/x-handlebars-template">
@@ -66,6 +85,7 @@
 		<script src="views/homeView.js" type="text/javascript"></script>        
 		<script src="views/studentView.js" type="text/javascript"></script>        
 		<script src="views/profileView.js" type="text/javascript"></script>        
+		<script src="views/classroomsView.js" type="text/javascript"></script>        
         
         <script src="app.js" type="text/javascript"></script>
 			
@@ -76,6 +96,33 @@
 
     </head>
     <body>
+		
+		 <div id="login_around">
+	        <div id="login_bg"></div>
+	        <div id="login">
+	        	<div class="title"><strong>My</strong> Classroom</div>
+	        	<form id="login_form" novalidate>
+		        	<input type="email" id="email" class="login_input" placeholder="Email Address">
+		        	<input type="password" id="pass" class="login_input" placeholder="Password">
+		        	<center>
+		        		<button type="submit" class="button" id="login_button">Login</button>
+		        	</center>
+	        	</form>
+	        </div>
+        </div>
+		
+		
+		<div id="lock" class="" onclick="">
+            <div id="lock_inside">
+                <div class="classroom_title">Toddler 2</div>
+                <div class="classroom_count_text">current count</div>
+                <div class="classroom_count"></div>
+                <div id="touch_to_unlock">touch anywhere to unlock</div>
+                </div>
+            </div>
+          
+        
+       
 
 
         <div id="top">
@@ -96,18 +143,11 @@
 		</div>
 		
 		
-		<!--
-		<div id="lock" class="" onclick="">
-            <div id="lock_inside">
-                <div class="classroom_title">Toddler 2</div>
-                <div class="classroom_count_text">current count</div>
-                <div class="classroom_count"></div>
-                <div id="touch_to_unlock">touch anywhere to unlock</div>
-                </div>
-            </div>
-        -->  
-           
+		
+		        
+        <div id="refresh" onclick="window.location = '/';"><i class="fa fa-refresh"></i></div>
         <script src="js/all.js" type="text/javascript"></script>
         <script src="js/lock-screen.js" type="text/javascript"></script>
+        <script src="js/login.js" type="text/javascript"></script>
     </body>
 </html>

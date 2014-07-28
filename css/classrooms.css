@@ -1,0 +1,67 @@
+.classrooms_around {
+	position: absolute;
+	top:80px;
+	width:560px;
+	margin-left:-280px;
+	left:50%;
+	background:#FFF;
+	z-index: 9001;
+	box-sizing: border-box;
+	padding:40px 60px;
+	border-radius: 3px;
+	box-shadow: #000 0 0 120px;
+	-webkit-transition: .6s;
+	-webkit-transform: translateX(500px);
+	opacity: 1;
+	margin-bottom: 80px;
+}
+.classrooms_around.on {
+	opacity: 1;
+	-webkit-transform: none;
+}
+.classrooms_around.off {
+	-webkit-transition: .4s;
+	-webkit-transform: translateX(-500px);
+	-webkit-transition-delay:.1s;
+	opacity: 0;
+}
+.classrooms_around .title {
+	font-size:42px;
+	font-weight: 100;
+	text-align: center;
+	margin-bottom: 40px;
+}
+ul.classrooms_list {
+	margin:0;
+	padding:0;
+	list-style: none;
+}
+li.classroom_selector {
+	margin:0;
+	padding:0;
+	font-size: 24px;
+	line-height: 44px;
+	position: relative;
+	font-weight: 200;
+	border-bottom:1px solid #eceff0;
+	-webkit-transition:.2s;
+}
+li.classroom_selector:last-child {
+	border-bottom: none;
+}
+li.classroom_selector:active {
+	background-color:#eceff0;
+}
+li.classroom_selector>div {
+	-webkit-transition:.2s;
+}
+li.classroom_selector:active>div {
+	-webkit-transform: scale(.9);
+}
+.classroom_selector .room_num {
+	position: absolute;
+	right: 0;
+	top:0;
+	font-size: 18px;
+	color:#bec3c7;
+}

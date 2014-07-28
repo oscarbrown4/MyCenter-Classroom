@@ -8,7 +8,7 @@
     border-bottom: 1px solid #bec3c7;
     box-sizing: border-box;
     padding:0 10px;
-    z-index: 6000;
+    z-index: 5000;
 }
 
 #top .classroom_title {
