@@ -1,5 +1,5 @@
 var classroom = Backbone.Model.extend({
-	url: '/api/classroom',
+	url: 'http://1000piggybacks.oscarbrown.co/api/classroom',
 	
 	local: true,
 	

@@ -30,7 +30,7 @@ var studentsCollection = Backbone.Collection.extend({
 	classroomID: 0,
 	
 	url: function(){
-		return '/api/students/' + this.classroomID;
+		return 'http://1000piggybacks.oscarbrown.co/api/students/' + this.classroomID;
 		},
 		
 	initialize: function(){
