@@ -1,5 +1,5 @@
 var classroomCollection = Backbone.Collection.extend({
-	url: '/api/classrooms',
+	url: 'http://classroom.mycenter.co/classroomapp/classrooms',
 	comparator: 'room',
 	
 	model: classroom,

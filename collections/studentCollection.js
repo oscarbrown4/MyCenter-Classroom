@@ -30,7 +30,7 @@ var studentsCollection = Backbone.Collection.extend({
 	classroomID: 0,
 	
 	url: function(){
-		return '/api/students/' + this.classroomID;
+		return 'http://classroom.mycenter.co/classroomapp/students/' + this.classroomID;
 		},
 		
 	initialize: function(){

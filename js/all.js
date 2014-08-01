@@ -18,7 +18,7 @@ function getAllStudents() {
 	
 	
 	$.ajax({
-		url:'/api/getAllStudents',
+		url:'http://classroom.mycenter.co/classroomapp/getAllStudents',
 		type: 'POST',
 		data: {},
 		success:function(resp){
@@ -76,7 +76,7 @@ $(document).ready(function(){
 function addNewStudent(childID) {
 	
 	$.ajax({
-		url:'/api/addNewStudent',
+		url:'http://classroom.mycenter.co/classroomapp/addNewStudent',
 		type: 'POST',
 		data: {
 			childID: childID

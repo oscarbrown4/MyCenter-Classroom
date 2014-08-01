@@ -1,5 +1,5 @@
 var classroom = Backbone.Model.extend({
-	url: '/api/classroom',
+	url: 'http://classroom.mycenter.co/classroomapp/classroom',
 	
 	local: true,
 	
