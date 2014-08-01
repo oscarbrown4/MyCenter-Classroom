@@ -401,7 +401,6 @@ if (PATH(0) == 'classrooms') $array = $classrooms;
 else $array = $students;		
 
 
-
 if (!PATH(1) || PATH(0) == 'students') { echo json_encode($array); exit; }
 else {
 	$itemID = PATH(1);
