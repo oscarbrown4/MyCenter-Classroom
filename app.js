@@ -72,11 +72,13 @@ function syncAll() {
 	setTimeout(syncAll, 60*1000);
 }
 
-$(function() {
+$(document).ready(function() {
 	
 	Backbone.DualStorage.offlineStatusCodes = [408,404,403,500];
 	app = new AppRouter();
 	Backbone.history.start();
     setTimeout(syncAll, 60*1000);
+    
+    
     
 });

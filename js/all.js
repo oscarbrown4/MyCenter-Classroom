@@ -10,7 +10,7 @@ function logout() {
 	localStorage.clear();
 	location.reload();
 	
-	
+	return false;
 }
 
 
