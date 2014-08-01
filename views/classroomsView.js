@@ -21,7 +21,7 @@ var classroomsView = Backbone.View.extend({
 		$('#login_around').append(this.render().el);
 
 		
-		$("#login").one('transitionend', function(){ $(this).remove(); }).addClass("off");
+		$("#login").one('webkitTransitionEnd', function(){ $(this).remove(); }).addClass("off");
 		$("body").redraw();
 		this.$el.addClass("on");
 		}
