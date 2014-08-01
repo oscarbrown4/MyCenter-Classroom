@@ -12,7 +12,8 @@ var student = Backbone.Model.extend({
     
     checkInOut: function(parentID) {
 		
-		var actions = (_.isUndefined(this.get('actions')) ? new Array() : this.get('actions');
+		if (_.isUndefined(this.get('actions'))) var actions = new Array();
+		else var actions = this.get('actions');
 		
 		var whatHappened = (this.get('checkedIn')) ? 'check out' : 'check in';
 		
