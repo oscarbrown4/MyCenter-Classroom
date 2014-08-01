@@ -5,8 +5,8 @@ var classroomCollection = Backbone.Collection.extend({
 	model: classroom,
 	
 	local: function() {
-		
-		if (_.isUndefined(localStorage['http://classroom.mycenter.co/classroomapp/classrooms'])) {
+				
+		if (_.isUndefined(localStorage['http://classroom.mycenter.co/classroomapp/classrooms']) || _.isNull(localStorage['http://classroom.mycenter.co/classroomapp/classrooms'])) {
 			console.log('fetch from server');
 			return false;
 		}
