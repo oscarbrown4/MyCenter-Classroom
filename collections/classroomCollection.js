@@ -1,5 +1,5 @@
 var classroomCollection = Backbone.Collection.extend({
-	url: 'http://1000piggybacks.oscarbrown.co/api/classrooms',
+	url: '/api/classrooms',
 	comparator: 'room',
 	
 	model: classroom,

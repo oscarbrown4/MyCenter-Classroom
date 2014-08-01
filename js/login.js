@@ -4,7 +4,7 @@ $("#login_form").on('submit', function(){
 		$("#login_button").html('<i class="fa fa-circle-o-notch fa-spin"></i>').addClass("sending");
 		$(".login_input").prop('disabled', true);
 		$.ajax({
-			url:'http://1000piggybacks.oscarbrown.co/api/login',
+			url:'/api/login',
 			type: 'POST',
 			data: {
 				email: $("#email").val(),

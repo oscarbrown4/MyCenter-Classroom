@@ -18,7 +18,7 @@ function getAllStudents() {
 	
 	
 	$.ajax({
-		url:'http://1000piggybacks.oscarbrown.co/api/getAllStudents',
+		url:'/api/getAllStudents',
 		type: 'POST',
 		data: {},
 		success:function(resp){
@@ -76,7 +76,7 @@ $(document).ready(function(){
 function addNewStudent(childID) {
 	
 	$.ajax({
-		url:'http://1000piggybacks.oscarbrown.co/api/addNewStudent',
+		url:'/api/addNewStudent',
 		type: 'POST',
 		data: {
 			childID: childID
