@@ -9,6 +9,10 @@ var homeView = Backbone.View.extend({
 	
 	render: function () {
 		
+		var classroomname = app.classrooms.findWhere({selected: true}).get('name');
+		
+		$(".classroom_name").text(classroomname);
+		
 		var numStudents = this.collection.models.length;		
 		if (numStudents > 0) {
 			var checkedin = this.collection.where({ checkedIn: true });
