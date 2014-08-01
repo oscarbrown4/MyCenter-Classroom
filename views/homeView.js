@@ -11,7 +11,7 @@ var homeView = Backbone.View.extend({
 		
 		var classroomname = app.classrooms.findWhere({selected: true}).get('name');
 		
-		$(".classroom_name").text(classroomname);
+		$(".classroom_title").text(classroomname);
 		
 		var numStudents = this.collection.models.length;		
 		if (numStudents > 0) {
