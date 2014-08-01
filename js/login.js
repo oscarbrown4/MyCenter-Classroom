@@ -27,7 +27,7 @@ $("#login_form").on('submit', function(){
 							localStorage.setItem("locID", resp.locID);
 							localStorage.setItem("userinfo", JSON.stringify(resp.userinfo));
 							$.cookie('logincode', resp.logincode, {expires:30, path:'/'});
-							window.location = '#classrooms';
+							app.navigate('classrooms', {trigger:true})
 							
 						}
 						else {
